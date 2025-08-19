@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forest Fire Predictor</title>
+</head>
+<body>
+    <h1>🔥 Welcome to the Forest Fire Predictor App 🔥</h1>
+    <p>This app will help predict the chances of a forest fire.</p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Fire Predictor</title>
+</head>
+<body>
+    <h1>🔥 Forest Fire Predictor App 🔥</h1>
+    <p>Welcome! This app will help predict the risk of a forest fire.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="temp">Temperature:</label>
+        <input type="number" name="temp" required><br><br>
+
+        <label for="humidity">Humidity:</label>
+        <input type="number" name="humidity" required><br><br>
+
+        <label for="wind">Wind Speed:</label>
+        <input type="number" name="wind" required><br><br>
+
+        <label for="rain">Rainfall:</label>
+        <input type="number" name="rain" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+    {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
